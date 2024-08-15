@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <form method="POST" action="/listings/<%= listings._id %>?_method=PUT">
+        
+
+        <div>
+            <label for="title" class="form-label">Title</label>
+    
+        <input type="text" name="listing[title]" placeholder="Enter title" class="form-control"id = "title" value="<%= listings.title %>" >
+        </div>
+        <br>
+            
+         <div>
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" placeholder="Enter description"  title="description"  class="form-control" required> <%= listings.description%></textarea>
+        </div>
+        <br>
+            <div>
+                <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" placeholder="Enter price" type="number" id="price" class="form-control"  value="<%= listings.price %>" required>
+    
+        </div>
+        <br>
+            
+        <div>
+            <label for="url" class="form-label">URL</label>
+            <input type="text" name="listing[image]" placeholder="Enter URL" id="url" class="form-control"  value="<%= listings.image.url %>"required>
+    
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-md-4">
+            <label for="location" class="form-label" >Location</label>
+            <input type="text" name="listing[location]" placeholder="Enter location" class="form-control" id="location"  value="<%= listings.location %>"required>
+    
+        </div>
+        
+            
+        <div class="col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" placeholder="Enter country" id="country" class="form-control"  value="<%= listings.country %>"required>
+        </div>
+     </div>
+        <br>
+    
+            <button  class ="btn btn-dark">Add</button>
+    </form>
+</body>
+
+
